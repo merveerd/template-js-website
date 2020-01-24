@@ -1,0 +1,698 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 1.1rem;
+}
+
+.body {
+    display: flex;
+}
+
+:root {
+    --dark-gray: rgb(66, 64, 64);
+}
+
+.submit-pop-up {
+    position: fixed;
+    opacity: 0;
+    transform: translateY(-3rem);
+    transition: opacity 200ms ease-out, transform 500ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    top: 40%;
+    left: 40%;
+    width: 20%;
+    background: white;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.submit-pop-up__text {
+    color: var(--dark-gray, rgb(44, 44, 44));
+    font-size: 1.5rem;
+    ;
+}
+
+.open {
+    display: block !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    z-index: 50;
+}
+
+.main-header {
+    width: 100%;
+    height: 5rem;
+    background-color: rgb(70, 16, 16);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 60;
+    top: 0;
+    left: 0;
+}
+
+.magazine-title__wrapper {
+    margin-left: 7%;
+    color: white;
+}
+
+.magazine-title {
+    font-size: 1.8rem;
+}
+
+.magazine-subtitle {
+    font-size: 0.8rem;
+}
+
+.main-nav {
+    width: 50%;
+    z-index: 60;
+}
+
+.main-nav__items {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.main-nav__item a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    padding: 2rem;
+}
+
+.main-nav__item {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav__item:hover {
+
+    height: 2.5rem;
+    border-radius: 0.8rem;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(91, 223, 150);
+}
+
+
+
+.slider-container {
+    width: 100%;
+    background-color: rgb(70, 16, 16);
+    margin-top: 5rem;
+    padding: 3rem 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.slider-container__navigator {
+    width: 2rem;
+    height: 2rem;
+    box-shadow: -7px 7px 0 rgba(91, 223, 150, 0.7);
+    transition: 0.5s;
+    z-index: 5;
+    top: 0.5rem;
+    position: absolute;
+
+}
+
+.slider-container__navigator-round {
+    position: absolute;
+    width: 2rem;
+    height: 3rem;
+    background-color: transparent;
+    top: 17rem;
+    border-radius: 50%;
+
+}
+
+.slider-container__navigator-round.left {
+    left: 9%;
+}
+
+.slider-container__navigator-round.right {
+    right: 9%;
+}
+
+.slider-container__navigator.left {
+    transform: rotate(45deg);
+    left: 1rem;
+}
+
+.slider-container__navigator.right {
+    transform: rotate(225deg);
+    right: 1rem;
+}
+
+.slider-container__navigator-round:hover {
+    cursor: pointer;
+}
+
+.slider-container__navigator-round:hover .slider-container__navigator {
+    box-shadow: -7px 7px 0 rgba(91, 223, 150, 1);
+
+}
+
+.slider-container__slider {
+    box-sizing: border-box;
+
+
+    /*niye %67den az olunca poziyonu sağa kayıyo, çok olunca hiçbişi değişmiyor height yokken*/
+
+
+}
+
+.slider-1 {
+    color: white;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#extra-reading {
+    display: none;
+}
+
+.insider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 30rem;
+    /* ekranı küçültürken resmin distort olmasını engelledi.  */
+}
+
+.insider-container picture {
+    justify-content: center;
+    display: flex;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute; 
+}
+
+.dropdown-content a {
+    min-width: 160px;
+    background-color: rgba(91, 223, 150);
+    border: honeydew solid 0.5px;
+    border-radius: 5px;
+    padding: 0;
+}
+.slider-2,
+.slider-3 {
+    display: none;
+    width: 100%
+}
+
+.slider-1__text-wrapper {
+    width: 25rem;
+}
+
+.slider-1__title {
+    font-size: 3rem;
+   
+
+}
+
+.slider__read-button,
+.latest-work-button {
+    margin-top: 1rem;
+    font-size: 1rem;
+    width: 9rem;
+    height: 2.3rem;
+    border-radius: 0.8rem;
+    color: white;
+    border: none;
+    background-color: rgb(91, 223, 150);
+    outline: none;
+}
+
+.latest-work-button {
+    display: block;
+    margin: 0 auto;
+
+}
+
+.slider__button {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: grey;
+    position: absolute;
+    top: 93%;
+    left: calc(48% - 10px);
+    border: none;
+}
+
+.slider__button:hover,
+.slider__button:focus {
+    background-color: honeydew;
+    cursor: pointer;
+    outline: none;
+}
+
+#slider__button-1 {
+    left: calc(49% - 50px);
+}
+
+#slider__button-2 {
+    left: calc(51% - 40px);
+}
+
+#slider__button-3 {
+    left: calc(53% - 30px);
+}
+
+.slider-1__image-1 {
+    width: 35rem;
+    border-radius: 50%;
+    border: gray;
+    border-style: solid;
+    border-width: 0.3rem;
+    margin-bottom: 2rem;
+    margin-left: 3rem;
+}
+
+#gallery {
+    background-color: rgb(128, 21, 21);
+    display: flex;
+    /* flex ve justify koymadan ortalamak istiyorum yeminlen yapamadım */
+    justify-content: center;
+    position: relative;
+}
+
+
+.gallery-button {
+    border: solid rgba(91, 223, 150, 0.7);
+    border-width: 0 8px 8px 0;
+    display: inline-block;
+    padding: 20px;
+    position: absolute;
+    margin-top: 190px;
+    z-index: 1;
+}
+
+.gallery-button.left {
+    transform: rotate(135deg);
+    left: calc(10% - 45px);
+}
+
+.gallery-button.right {
+    transform: rotate(-45deg);
+    right: calc(10% - 45px);
+    /*taşmayı kaldıramadım*/
+
+}
+
+.gallery-button:hover {
+    border: solid honeydew;
+    border-width: 0 10px 10px 0;
+    cursor: pointer;
+
+}
+
+#gallery__big-container {
+    width: 85%;
+    background-color: blueviolet;
+    overflow: hidden;
+}
+
+#gallery__wrapper {
+
+    width: 1920px;
+    height: 440px;
+    background-color: rgb(128, 21, 21);
+    position: relative;
+    left: -320px;
+    /* relative 160 pxi, normalde parentı olan big containerddan başlatıyordu.
+     Ama ben hesaplamalarımda wrapper ı da ekranı ortalacak şekilde aldığımdan bigcontainer koymadanki pozisyona getirmek için koyduk.
+     offsetparent ı niye body,  gerçek parentı bigcontainer değil.?
+    wrap dene*/
+
+}
+
+.gallery__container {
+    width: 260px;
+    height: 320px;
+    background-color: white;
+    color: var(--dark-gray, rgb(44, 44, 44));
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    margin: 60px 30px;
+    margin-left: 30px;
+    transition: opacity 200ms ease-out, transform 500ms;
+    float: left;
+    position: relative;
+}
+
+
+.gallery__picture {
+    display: flex;
+    width: 6rem;
+    height: 6rem;
+    margin: 1rem 0;
+    background-color: var(--dark-gray, rgb(44, 44, 44));
+    color: white;
+    font-size: 0.8rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery__container:hover {
+    background-color: rgb(91, 223, 150);
+    color: white;
+}
+
+.gallery__container:hover .gallery__picture {
+    background-color: white;
+    color: var(--dark-gray, rgb(44, 44, 44));
+    /*daha bi ince gibi oluyo? */
+}
+
+.gallery__title {
+    width: 7rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+.gallery__text {
+    padding: 1rem;
+    font-size: 0.8rem;
+}
+
+.margin-gallery {
+    margin-left: 350px;
+    /*left yapınca olmuyor çünkü sadece kendini kaydırıyor, kendine göre pozisyonlandığındn kimseyi etkilemiyor*/
+}
+
+.open-gallery {
+    margin-left: 350px;
+    transition: all .5s;
+}
+
+.only-transition {
+    transition: all .5s;
+}
+
+
+
+#seperator-latest-work {
+    /*bunu ayrı bir div açmadan latest work divi altında yapabilir miydim yapalım mı?bii de nav dakilere tıklayınca bi tık altına gidiyor divin başlangıcının bak ona)*/
+    position: relative;
+    width: 100%;
+    height: 4rem;
+    background-color: rgb(128, 21, 21);
+}
+
+.seperator-latest-work__name {
+    position: relative;
+    width: 10rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    top: 0rem;
+    background-color: var(--dark-gray, rgb(44, 44, 44));
+    color: white;
+    text-align: center;
+    padding-top: 0.7rem;
+    margin: auto;
+    z-index: 1;
+}
+
+.seperator-latest-work__line {
+    position: absolute;
+    width: 79%;
+    top: 1.5rem;
+    background-color: var(--dark-gray, rgb(44, 44, 44));
+    height: 0.2rem;
+    left: 10.5%;
+    /* why margin:auto çalışmıyor napabilirim ortalamak için*/
+}
+
+.latest-work,
+#extra-latest-work {
+    width: 100%;
+    background-color: rgb(128, 21, 21);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 450px);
+    gap: 2rem;
+    justify-items: center;
+    justify-content: center;
+    padding-bottom: 2rem;
+}
+
+#extra-latest-work {
+    display: none;
+}
+
+.button-wrapper {
+    background-color: rgb(128, 21, 21);
+    height: 4rem;
+}
+
+.latest-work__image-container {
+    border: 0.3rem solid var(--dark-gray, rgb(44, 44, 44));
+    overflow: hidden;
+    width: 22rem;
+    height: 14rem;
+
+
+}
+
+.latest-work__image {
+    width: 100%;
+}
+
+
+#latest-work__image-container-6 {
+
+    background-image: url(images/bike6.jpg);
+    background-size: 97%;
+    background-position: 8px -40px;
+}
+
+
+.latest-work__image-container:hover {
+    border: 0.3rem solid rgb(91, 223, 150);
+}
+
+.latest-work__image-container:hover {
+    transform: translateZ(30px);
+}
+
+.extra-latest-work {
+    display: none;
+}
+
+#support {
+    width: 100%;
+    box-sizing: border-box;
+    /* padding-left: 5rem; */
+    display: flex;
+    background-color: var(--dark-gray, rgb(44, 44, 44));
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.support__element {
+    color: white;
+    padding: 2rem;
+    width: 17%;
+    margin: 1rem;
+}
+
+
+
+.support__element__sub-title {
+    color: rgb(91, 223, 150);
+    font-weight: bold;
+}
+
+.support__element__title {
+    color: white;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    width: 10rem;
+}
+
+#support a {
+    color: rgb(91, 223, 150);
+    text-decoration: none;
+}
+
+.Quick-Links-List {
+    list-style: none;
+    margin-top: 1rem;
+    border-bottom: grey solid;
+    border-width: 0.1rem;
+    padding-bottom: 0.5rem;
+
+}
+
+.support__element-form {
+    display: flex;
+    min-width: 9rem;
+    flex-direction: column;
+}
+
+.form__input {
+    border: none;
+    border-radius: 0.8rem;
+    margin-top: 0.7rem;
+    background-color: rgb(48, 45, 45);
+    color: white;
+    height: 2rem;
+    font-size: 0.8rem;
+}
+
+input {
+    text-align: center;
+}
+
+#form__button {
+    width: 5rem;
+    height: 2.3rem;
+    border-radius: 0.8rem;
+    color: black;
+    border: none;
+    font-weight: bold;
+    background-color: rgb(91, 223, 150);
+}
+
+#message {
+    height: 3rem;
+}
+
+.web-footer {
+    box-sizing: border-box;
+    padding: 0 3rem;
+    width: 100%;
+    height: 4rem;
+    background-color: rgb(48, 45, 45);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: grey;
+    font-size: 1.2rem;
+}
+
+.navigator-open {
+    display: block;
+}
+
+@media(max-width:1460px) and (min-width:1136px) {
+
+    .slider-container__navigator {
+        display: none;
+    }
+
+    .slider-2,
+    .slider-3 {
+        width: 85%
+    }
+}
+
+@media(max-width:1136px) {
+
+    .slider-2,
+    .slider-3 {
+        width: 71%
+    }
+
+    .main-header {
+        justify-content: left;
+    }
+
+    .insider-container {
+        min-height: 585px;
+    }   
+    
+}
+
+@media(max-width: 820px) {
+    * {
+        font-size: 1rem;
+    }
+
+    .slider-1__image-1 {
+        width: 73%;
+    }
+
+    .main-header {
+        justify-content: space-between;
+    }
+
+    #main-nav__home:hover .dropdown-content{
+        display: block;
+    }
+    #main-nav__home:hover .dropdown-content a{
+        display: block;
+    }
+    
+    .main-nav__item.ekstra {
+        display: none;
+    }
+    
+    #main-nav__home {
+        height: 2.5rem;
+        border-radius: 0.8rem;
+        align-items: center;
+        background-color: rgb(91, 223, 150);
+        margin: auto 0;
+        display: inline-block;
+        line-height: 38px;
+        position: relative;
+    }
+    #main-nav__home:hover {
+        background-color: transparent;
+    }
+}
+
+@media(max-width: 630px) {
+
+    .slider-container__navigator,
+    .gallery-button {
+        display: none;
+    }
+    .slider__button {
+        display: none;
+    }
+    .slider-1__text-wrapper {
+        width: 90%;
+    }
+}
+
+@media(max-width: 440px){
+.support__element{
+    width: 50%;
+}
+.slider-1__image-1 {
+    width: 73%;
+    margin-left: -5px;
+    margin-top: 40px;
+}
+}
+
+
+@media(max-width: 370px){
+.latest-work__image-container{
+    width: 60%;
+    height: auto;
+}
+}
